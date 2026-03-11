@@ -16,14 +16,23 @@ export default function Navbar() {
     return (
         <>
             {/* Mobile Top Navbar */}
-            <nav className="md:hidden fixed w-full top-0 z-50 bg-[#f9f9f9]/90 backdrop-blur-md border-b border-gray-200 h-16 flex items-center justify-between px-6">
-                <Link href="/" className="font-bold text-lg tracking-tight hover:opacity-70 transition-opacity">
-                    Roy Wassermann
+            <nav className="md:hidden fixed w-full top-0 z-50 bg-[#f9f9f9]/90 backdrop-blur-md border-b border-gray-200 h-16 flex items-center justify-between px-6 overflow-x-auto whitespace-nowrap hide-scrollbar">
+                <Link href="/" className="font-bold text-lg tracking-tight hover:opacity-70 transition-opacity mr-4 shrink-0">
+                    Roy
                 </Link>
-                {/* Simplified mobile links */}
-                <div className="flex items-center gap-4 text-sm font-medium text-gray-500">
-                    <Link href="/courses" className={`transition-colors ${pathname === '/courses' ? 'text-black font-semibold' : 'hover:text-black'}`}>Courses</Link>
-                    <Link href="/projects" className={`transition-colors ${pathname === '/projects' ? 'text-black font-semibold' : 'hover:text-black'}`}>Projects</Link>
+                <div className="flex items-center gap-2 text-sm font-medium">
+                    {navLinks.map((link) => {
+                        const isActive = pathname.startsWith(link.href);
+                        return (
+                            <Link 
+                                key={link.name} 
+                                href={link.href} 
+                                className={`transition-all py-1.5 px-3.5 rounded-full ${isActive ? 'bg-gray-900 text-white shadow-sm font-semibold' : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100'}`}
+                            >
+                                {link.name}
+                            </Link>
+                        );
+                    })}
                 </div>
             </nav>
 
@@ -35,14 +44,15 @@ export default function Navbar() {
                 
                 <div className="flex flex-col gap-2 text-[15px] font-medium text-gray-500">
                     {navLinks.map((link) => {
-                        const isActive = pathname === link.href;
+                        const isActive = pathname.startsWith(link.href);
                         return (
                             <Link 
                                 key={link.name} 
                                 href={link.href} 
-                                className={`px-4 py-2.5 -mx-4 rounded-lg transition-all ${isActive ? 'bg-gray-200/60 text-gray-900 font-semibold shadow-sm' : 'hover:text-gray-900 hover:bg-gray-100/50'}`}
+                                className={`flex items-center justify-between px-4 py-3 -mx-4 rounded-xl transition-all ${isActive ? 'bg-white border border-gray-200 shadow-sm text-gray-900 font-bold translate-x-1' : 'hover:text-gray-900 text-gray-500 hover:bg-gray-100/60 hover:translate-x-1'}`}
                             >
-                                {link.name}
+                                <span>{link.name}</span>
+                                {isActive && <span className="w-1.5 h-1.5 rounded-full bg-blue-600"></span>}
                             </Link>
                         );
                     })}

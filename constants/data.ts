@@ -2,8 +2,8 @@ export const personalInfo = {
   name: "Roy Wassermann",
   title: "Computer Science Student at EPFL",
   bio: "I'm a second year Computer Science student at EPFL exploring the intersection of natural and artificial intelligence. I translate this interest into practical projects, developing AI-powered scripts in Python and building mobile applications in Swift. I thrive in collaborative environments and I'm eager to join a diverse team to build meaningful technology.",
-  email: "roywass1204@gmail.com",
-  linkedin: "linkedin.com/in/roywassermann",
+  email: "rswassermann@gmail.com",
+  linkedin: "https://www.linkedin.com/in/roy-wassermann-b38aa0355/",
   phone: "+32 478 58 26 88",
   languages: [
     { language: "French", proficiency: "mother tongue" },
@@ -36,24 +36,32 @@ export const personalInfo = {
 export const projects = [
   {
     title: "ICoop — Fire & Water",
+    year: "2024-2025",
+    status: "Completed",
     description: "A 2D cooperative puzzle game built in Java (PlayEngine) exploring mechanics of elemental affinities. Designed double dispatch interactions, complex entity behaviors, and a challenging final boss fight.",
     techStack: ["Java", "PlayEngine", "OOP", "Game Dev"],
     githubLink: "https://github.com/Roywass/ICoop",
   },
   {
     title: "ReChor Route Planner",
+    year: "2025",
+    status: "Completed",
     description: "A Swiss public transport route planner built with JavaFX. Computes optimal multi-criteria journeys (Pareto front) minimizing travel time and transfers using real timetable data.",
     techStack: ["Java", "JavaFX", "Algorithms", "Data Structures"],
     githubLink: "https://github.com/Roywass/Rechor_BA2",
   },
   {
     title: "InfobelPro Data Pipelines",
+    year: "2025",
+    status: "Completed",
     description: "Developed robust Python automation scripts and AI-driven processes to streamline complex data transformation workloads. Built tailored pipelines to clean, format, and prepare massive corporate datasets efficiently.",
     techStack: ["Python", "Automation", "Data Pipelines", "AI"],
     githubLink: "#",
   },
   {
     title: "Acely: AI Interview Coach",
+    year: "2025-2026",
+    status: "In Progress",
     description: "A comprehensive iOS application acting as a personal interview coach. Leverages AI to generate tailored questions, evaluate responses, and provide highly specific feedback to candidates.",
     techStack: ["Swift", "iOS", "Machine Learning", "Mobile UI"],
     githubLink: "#",
